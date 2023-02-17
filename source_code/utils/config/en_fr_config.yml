@@ -1,0 +1,30 @@
+data:
+  train:
+    src_file: ./data/processed/augmented/en-fr/backtrans2_data_en.txt
+    tgt_file: ./data/processed/augmented/en-fr/backtrans2_data_vi.txt
+  dev: 
+    src_file: ./data/processed/dev/tst2012.en
+    tgt_file: ./data/processed/dev/tst2012.vi
+
+utils:
+  vocab:
+    en: ./utils/vocab/en-fr/en.json
+    vi: ./utils/vocab/en-fr/vi.json
+    
+  training_runs:
+    train_loss: ./utils/runs/en-fr/train_loss
+    dev_loss: ./utils/runs/en-fr/dev_loss
+    learning_rate: ./utils/runs/en-fr/learning_rate
+train:
+  num_epochs: 20
+  learning_rate: 0.001
+  batch_size: 64
+model:
+  max_sent_len: 120
+  embedding_size: 512
+  num_heads: 8
+  num_encoder_layers: 3
+  num_decoder_layers: 3
+  dropout: 0.1
+  forward_expansion: 4
+  checkpoint_path: ./model/en_fr_model.pth.tar

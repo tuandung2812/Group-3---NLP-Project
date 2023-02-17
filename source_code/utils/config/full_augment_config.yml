@@ -1,0 +1,31 @@
+data:
+  train:
+    src_file: ./data/processed/augmented/all/en_augment.txt
+    tgt_file: ./data/processed/augmented/all/vi_augment.txt
+  dev: 
+    src_file: ./data/processed/dev/tst2012.en
+    tgt_file: ./data/processed/dev/tst2012.vi
+
+utils:
+  vocab:
+    en: ./utils/vocab/full/en.json
+    vi: ./utils/vocab/full/vi.json
+    
+  training_runs:
+    train_loss: ./utils/runs/full/train_loss
+    dev_loss: ./utils/runs/full/dev_loss
+    learning_rate: ./utils/runs/full/learning_rate
+
+train:
+  num_epochs: 20
+  learning_rate: 0.001
+  batch_size: 64
+model:
+  max_sent_len: 120
+  embedding_size: 512
+  num_heads: 8
+  num_encoder_layers: 3
+  num_decoder_layers: 3
+  dropout: 0.1
+  forward_expansion: 4
+  checkpoint_path: ./model/full_model.pth.tar

@@ -1,0 +1,3 @@
+- Thử nltk + word2vec
+- Dùng model pre-trained Việt-Anh
+- Thử cả lowercase + uppercase
